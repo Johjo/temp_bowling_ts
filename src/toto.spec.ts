@@ -1,13 +1,17 @@
 import { describe, it, expect } from 'vitest';
 
 class Game {
-  roll(number: number) {
+  private totalScore: number = 0;
 
+  roll(number: number) {
+    if(number === 10) {
+    }
+    this.totalScore += number;
   }
 
   score() {
     let number = 20;
-    return number;
+    return this.totalScore;
   }
 }
 
@@ -18,5 +22,19 @@ describe('coucou', () => {
       game.roll(1);
 
     expect(game.score()).toBe(20);
+  });
+
+  it('', () => {
+    const game: Game = new Game();
+    game.roll(1);
+    expect(game.score()).toBe(1);
+  });
+
+  it('', () => {
+    const game: Game = new Game();
+    game.roll(10);
+    game.roll(1);
+    game.roll(1);
+    expect(game.score()).toBe(14);
   });
 });
