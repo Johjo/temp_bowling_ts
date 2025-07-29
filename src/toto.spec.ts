@@ -41,4 +41,9 @@ describe('coucou', () => {
     game.roll(1);
     expect(game.score()).toBe(14);
   });
+
+  it('', () => {
+    const game: Game = new Game();
+
+  });
 });
