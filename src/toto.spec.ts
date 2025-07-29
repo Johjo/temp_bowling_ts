@@ -1,17 +1,21 @@
 import { describe, it, expect } from 'vitest';
 
 class Game {
-  private totalScore: number = 0;
+  private rolls: number[] = [];
 
   roll(number: number) {
-    if(number === 10) {
-    }
-    this.totalScore += number;
+    this.rolls.push(number);
   }
 
   score() {
-    let number = 20;
-    return this.totalScore;
+    let score = 0;
+    for (let i = 0; i < this.rolls.length; i++) {
+      if (this.rolls[i] === 10) {
+        score += this.rolls[i + 1] + this.rolls[i + 2];
+      }
+      score += this.rolls[i];
+    }
+    return score;
   }
 }
 
