@@ -1,4 +1,8 @@
 {
+	"scripts": {
+		"test": "vitest",
+		"test:watch": "vitest --watch"
+	},
 	"devDependencies": {
 		"vitest": "^3.2.4"
 	}
